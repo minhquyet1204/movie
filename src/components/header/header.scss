@@ -1,0 +1,101 @@
+@use "../../scss//index.scss" as *;
+
+.header {
+  height: $header-height;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  transition: height 0.3s ease, background-color 0.3s ease;
+
+  &.shrink {
+    height: $header-shrink-height;
+    background-color: $body-bg;
+  }
+
+  &__wrap {
+    @include flex(center, space-between);
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  &__nav {
+    @include flex(center, unset);
+    column-gap: 2rem;
+
+    a {
+      font-size: 1.4rem;
+      font-weight: 600;
+      position: relative;
+      padding: 5px 0;
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.5s ease;
+
+        width: 0;
+        height: 2px;
+        background-color: $main-color;
+      }
+
+      &.active::after,
+      &:hover::after {
+        width: 100%;
+      }
+
+      @include mobile {
+        font-size: 1.2rem;
+      }
+    }
+
+    li .active {
+      color: $main-color;
+    }
+
+    @include mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 4rem;
+      width: 100%;
+      background-color: $body-bg;
+      padding: 0 2rem;
+      box-shadow: $box-shadow;
+
+      @include flex(center, space-between);
+
+      & > * ~ * {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__menu {
+    .btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .btn-right a {
+      color: $white;
+    }
+  }
+}
+
+.logo {
+  img {
+    width: 4rem;
+
+    @include mobile {
+      width: 3rem;
+    }
+  }
+}
