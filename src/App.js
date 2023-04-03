@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      {false ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <UserAuthProvider>
