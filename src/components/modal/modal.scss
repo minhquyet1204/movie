@@ -38,6 +38,11 @@
       font-size: 1.5rem;
       cursor: pointer;
 
+      @include mobile {
+        right: 0;
+        top: -4px;
+      }
+
       &:hover {
         color: $main-color;
       }

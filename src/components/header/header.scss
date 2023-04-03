@@ -62,13 +62,13 @@
       position: fixed;
       bottom: 0;
       left: 0;
-      height: 4rem;
+      height: 5rem;
       width: 100%;
       background-color: $body-bg;
       padding: 0 2rem;
       box-shadow: $box-shadow;
 
-      @include flex(center, space-between);
+      @include flex(center, space-around);
 
       & > * ~ * {
         margin-left: 0;
