@@ -9,14 +9,35 @@
   border-radius: 32px;
   margin-bottom: 1rem;
 
-  &__icons {
-    display: none;
-
+  &__icon {
     position: absolute;
     top: 5%;
     left: 5%;
     font-size: 1.8rem;
     cursor: pointer;
+
+    &-liked {
+      display: block;
+    }
+
+    &-outline {
+      display: none;
+    }
+
+    &-right {
+      display: none;
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 2.2rem;
+      cursor: pointer;
+
+      color: white;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
   }
 
   .btn {
@@ -53,7 +74,11 @@
       color: $main-color;
     }
 
-    &:hover &__icons {
+    &:hover &__icon-outline {
+      display: block;
+    }
+
+    &:hover &__icon-right {
       display: block;
     }
   }

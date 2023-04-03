@@ -32,7 +32,9 @@ const Cast = (props) => {
               })`,
             }}
           ></div>
-          <p className="casts__item__name">{item.name}</p>
+          <p className="casts__item__name">
+            {item.name} <span>as</span> <span>{item.character}</span>
+          </p>
         </div>
       ))}
     </div>

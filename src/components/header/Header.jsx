@@ -3,23 +3,29 @@ import React, { useEffect, useRef } from "react";
 import "./header.scss";
 
 import logo from "../../assets/tmovie.png";
-import { Link, NavLink } from "react-router-dom";
+import noUser from "../../assets/no-image-user.jpg";
+import { FiBox } from "react-icons/fi";
+
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserAuth";
 import Button, { OutlineButton } from "../button/Button";
+const headerNav = [
+  {
+    display: "Home",
+    path: "/",
+  },
+  {
+    display: "Movies",
+    path: "/movie",
+  },
+  {
+    display: "TV Series",
+    path: "/tv",
+  },
+];
 const Header = () => {
-  const headerNav = [
-    {
-      display: "Home",
-      path: "/",
-    },
-    {
-      display: "Movies",
-      path: "/movie",
-    },
-    {
-      display: "TV Series",
-      path: "/tv",
-    },
-  ];
+  const { user, handleLogOut, movies } = UserContext();
+  const navigate = useNavigate();
 
   const headerRef = useRef();
 
@@ -40,11 +46,19 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const logOut = async () => {
+    await handleLogOut();
+
+    navigate("/");
+  };
+
   return (
     <div ref={headerRef} className="header">
       <div className="header__wrap container">
         <div className="logo">
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <ul className="header__nav">
           {headerNav.map((e, i) => (
@@ -61,15 +75,40 @@ const Header = () => {
           ))}
         </ul>
 
-        <div className="header__menu">
-          <OutlineButton>
-            <Link to="/login">Log in</Link>
-          </OutlineButton>
+        {user?.email ? (
+          <div className="header__user">
+            <div className="header__user-icon">
+              <Link to="/favorite">
+                {" "}
+                <FiBox />
+              </Link>
 
-          <Button className="btn-right">
-            <Link to="/signup">Sign up</Link>
-          </Button>
-        </div>
+              <div className="header__user-icon-quantity">{movies?.length}</div>
+            </div>
+
+            <div className="header__user-div">
+              <h4>{user?.displayName}</h4>
+              <img
+                src={user?.photoURL === null ? noUser : user?.photoURL}
+                alt=""
+              />
+
+              <Button onClick={logOut} className="btn-user">
+                Log out
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <div className="header__menu">
+            <Link to="/login">
+              <OutlineButton>Log in</OutlineButton>
+            </Link>
+
+            <Link to="/signup">
+              <Button className="btn-right">Sign up</Button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

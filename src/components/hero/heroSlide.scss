@@ -62,9 +62,9 @@
       }
 
       .title {
-        font-size: 4rem;
+        font-size: 3.8rem;
 
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
 
         @include tablet {
@@ -82,7 +82,7 @@
       .overview {
         font-size: 1.4rem;
 
-        font-weight: 600;
+        font-weight: 500;
 
         @include mobile {
           display: -webkit-box;

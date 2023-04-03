@@ -22,9 +22,7 @@ function HeroSlide() {
           params,
         });
         setMovieItems(response.results.slice(0, 4));
-      } catch (error) {
-        console.log("error", error);
-      }
+      } catch (error) {}
     };
     getMovies();
   }, []);

@@ -37,6 +37,10 @@
   position: relative;
   padding: 0 2rem;
 
+  @include mobile {
+    margin-top: -280px;
+  }
+
   &__poster {
     flex: 1;
 
@@ -104,6 +108,15 @@
 
     &__name {
       font-size: 0.8rem;
+
+      span:nth-child(1) {
+        font-style: italic;
+      }
+
+      span:nth-child(2) {
+        font-size: 14px;
+        font-weight: 600;
+      }
     }
   }
 }

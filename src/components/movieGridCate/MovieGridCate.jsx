@@ -84,7 +84,7 @@ const MovieGridCate = (props) => {
       {page < totalPage ? (
         isLoading ? (
           <div className="movie-grid__loader">
-            <div class="movie-grid__loader-css"></div>
+            <div className="movie-grid__loader-css"></div>
           </div>
         ) : (
           <div className="movie-grid__loadmore">
