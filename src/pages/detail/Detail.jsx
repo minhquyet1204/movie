@@ -9,6 +9,8 @@ import Video from "./Video";
 import noImage from "../../assets/no-image.png";
 import MovieList from "../../components/movieList/MovieList";
 
+import { SlClock } from "react-icons/sl";
+
 const Detail = () => {
   const { cate, id } = useParams();
 
@@ -30,6 +32,8 @@ const Detail = () => {
   } else {
     bgImage = apiConfig.originalImage(item?.poster_path || item?.backdrop_path);
   }
+
+  console.log(item);
 
   return (
     <>
@@ -61,6 +65,19 @@ const Detail = () => {
                       {genre.name}
                     </span>
                   ))}
+              </div>
+
+              <div className="sub_info">
+                <span className="release_date">
+                  {item.release_date || item.last_air_date}
+                </span>
+                <span className="runtime">
+                  <div className="runtime__icon">
+                    {" "}
+                    <SlClock />
+                  </div>
+                  {item.runtime || item.episode_run_time[0]}m
+                </span>
               </div>
               <p className="overview">{item.overview}</p>
               <div className="cast">

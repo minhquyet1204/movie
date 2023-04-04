@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import "./header.scss";
 
-import logo from "../../assets/tmovie.png";
+import logo from "../../assets/logo.png";
 import noUser from "../../assets/no-image-user.jpg";
 import { FiBox } from "react-icons/fi";
 

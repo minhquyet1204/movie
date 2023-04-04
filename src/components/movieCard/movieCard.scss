@@ -62,7 +62,8 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
-    &:hover::before {
+    &:hover::before,
+    &:active::before {
       opacity: 0.6;
     }
 

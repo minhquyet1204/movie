@@ -68,7 +68,7 @@
     }
 
     & > * {
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .title {
@@ -126,5 +126,26 @@
 
   &__title {
     margin-bottom: 1.5rem;
+  }
+}
+
+.release_date {
+  margin-right: 2rem;
+  padding: 4px;
+  border: 1px solid #fff;
+}
+
+.runtime {
+  padding: 4px;
+  border: 1px solid #fff;
+
+  &__icon {
+    display: inline-block;
+    width: 1rem;
+    margin-right: 8px;
+    font-size: 1.2rem;
+
+    position: relative;
+    top: 2px;
   }
 }
