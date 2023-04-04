@@ -15,6 +15,9 @@
 <img width="768" alt="" src="https://ik.imagekit.io/120499/Cinema.png?updatedAt=1680597035404">
 <img width="768" alt="" src="https://ik.imagekit.io/120499/search.png?updatedAt=1680597033823">
 <img width="768" alt="" src="https://ik.imagekit.io/120499/detail.png?updatedAt=1680597034947">
+
+
+
 <img width="768" alt="" src="https://ik.imagekit.io/120499/login.png?updatedAt=1680597031121">
 
 
