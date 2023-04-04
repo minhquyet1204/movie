@@ -5,10 +5,10 @@
 # Pages
 
 - Deploy : https://cinemaself.netlify.app/movie
-- Using : React , React Router Dom , Axios
-  Feature :
-- Search movie , tv based on keywords
-- Sign up , log in with Firebase and store favorite data with Firestore
+- Using : React , React Router Dom , Axios .
+ - Feature :
+ Search movie , tv based on keywords
+ Sign up , log in with Firebase and store favorite data with Firestore
 
 # Preview
 
