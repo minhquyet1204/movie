@@ -5,10 +5,9 @@ import Loader from "./pages/loader/Loader";
 import UserAuthProvider from "./context/UserAuth";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
